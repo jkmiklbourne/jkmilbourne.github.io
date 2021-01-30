@@ -229,6 +229,8 @@ INSERT INTO fancyPantsEmp (empName)
 INSERT INTO fancyPantsEmp (empName)
 			VALUES ('Mark Hoffman');
 			
-
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON fancypantsMembers.*
+TO fp_emp IDENTIFIED BY 'pa55word';
 
 
