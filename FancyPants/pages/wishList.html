@@ -1,13 +1,15 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
-#Original Author:                                       #Joshua Milbourne
-#Date Created:                                          #09/10/20
-#Version:                                                    #
-#Date Last Modified:                                #
-#Modified by:                                           #
-#Modification log:                                    #
-created Wish List Page
- --
+#Original Author:                                   #Joshua Milbourne
+#Date Created:                                      #09/10/20
+#Version:                                           #1.2
+#Date Last Modified:                                #1/31/21
+#Modified by:                                       #Joshua Milbourne
+#Modification log:                                  #
+
+        09/10/20    v1.0    Joshua Milbourne    Created wishList page
+        01/31/21    v1.1    Joshua Milbourne    Cleaned up code and added comments
+--
 ------------------------------------------------------------------------------------------------------------------>
 
 <!DOCTYPE html>
@@ -18,16 +20,18 @@ created Wish List Page
         <meta name="description" content="FancyPants Event Designs, designing your perfect event no matter how fancy your pants are">
         <meta name="keywords" content="party planner, party, wedding, event, planner, designer, FancyPants, Fancy Pants, ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!----------------------------------------------------------- CSS Links -->
         <link rel="stylesheet" href="../styles/normalize.css">
         <link rel="stylesheet" href="../styles/style.css">
+
+        <!------------------------------------------------------------ favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="../images/favicon_io/site.webmanifest">
-        <script type="text/javascript" src="../js/library_storage.js"></script>
-        <script type="text/javascript" src="../js/library_task.js"></script>
-        <script type="text/javascript" src="../js/library_tasklist.js"></script>
-        <script src="../js/wishList.js"></script>
+
+        
         <title>FancyPants Event Designs Wish List</title>
     </head>
     <body>
@@ -39,14 +43,21 @@ created Wish List Page
             </header>
             <main>
                 <section class="main">
+
                     <h1><br>Wish List</h1>
                     <h2>A place to jot down and store the must-haves for your perfect event</h2><br>
-                    <!-- Tasks js app -->
+
+                    <!----------------------------------------------------------- Tasks js app -->
                     <label>Your wish list:</label>
                     <div id="tasks"></div>
+
                     <label for="task"> Your Wish:</label><br>
                     <input type="text" name="task" id="task"><br>
+
+                    <!----------------------------------------------------------- buttons -->
+                    <!-- Add Wish button -->
                     <input type="button" class="btn" name="add_task" id="add_task" value="Add Wish"><br>
+                    <!-- Clear Wishes button -->
                     <input type="button" class="btn" name="clear_tasks" id="clear_tasks" value="Clear Wishes"><br><br>
                     <div class="clear"></div>
                 </section>
@@ -61,5 +72,11 @@ created Wish List Page
                 <a href="https://www.youtube.com/" target="blank"><img src="../images/yt.png" alt="youtube"></a>
                 <a href="https://www.instagram.com/" target="blank"><img src="../images/ig.png" alt="instagram"></a></p>
         </footer>
+
+        <!----------------------------------------------------------------- JavaScript -->
+        <script type="text/javascript" src="../js/library_storage.js"></script>
+        <script type="text/javascript" src="../js/library_task.js"></script>
+        <script type="text/javascript" src="../js/library_tasklist.js"></script>
+        <script src="../js/wishList.js"></script>
     </body>
 </html>

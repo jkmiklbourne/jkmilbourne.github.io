@@ -1,30 +1,33 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/18/20
-*Version:                                                *
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-created library_tasks.js to add prototype for wishlist
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/18/20
+*Version:                                         *1.
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/18/20    v1.0    Joshua Milbourne    Created library_tasks.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
 "use strict";
 
-var taskPrototype = {
+const taskPrototype = {
 	isValid: function() {
-	    if (this.text === "") { return false; } 
-    	else { return true; }
+	if (this.text === "") { return false; } 
+    else { return true; }
 	},
+
 	toString: function() {
-  	    var first = this.text.substring(0,1);
-		return first.toUpperCase() + this.text.substring(1);
+	let first = this.text.substring(0,1);
+	return first.toUpperCase() + this.text.substring(1);
 	}
 };
 
-var getTask = function(taskText) {
-	var task = Object.create(taskPrototype);
+const getTask = function(taskText) {
+	let task = Object.create(taskPrototype);
 	task.text = taskText;
 	return task;
-}
+};

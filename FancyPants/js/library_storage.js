@@ -1,35 +1,40 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/18/20
-*Version:                                                *
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-created library_storage.js to add local storage funtions for wishList
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/18/20
+*Version:                                         *1.
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/18/20    v1.0    Joshua Milbourne    Created library_storage.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
 "use strict";
-var $ = function(id) { return document.getElementById(id); };
+const $ = (id) => document.getElementById(id);
 
-var storagePrototype = {
+const storagePrototype = {
     get: function() {
-        var str = localStorage.getItem(this.key) || "";
+        let str = localStorage.getItem(this.key) || "";
         return (str === "")? []: str.split("|");
     },
+
     set:function(arr) {
         if (Array.isArray(arr)) {
-            var str = arr.join("|"); 
+            let str = arr.join("|"); 
             localStorage.setItem(this.key, str);
         }
     },
+
     clear: function() {
         localStorage.setItem(this.key, "");
     }
 };
-var getTaskStorage = function(key) {
-    var storage = Object.create(storagePrototype);
+
+const getTaskStorage = function(key) {
+    let storage = Object.create(storagePrototype);
     storage.key = key;
     return storage;
 };

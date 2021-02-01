@@ -1,29 +1,27 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/03/20
-*Version:                                                *1
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-09/03/20
-created js to handle code for faq
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/03/20
+*Version:                                         *1.1
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/03/20    v1.0    Joshua Milbourne    Created faq.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
 
 "use strict";
-// $ function
-var $ = function(id) {
-    return document.getElementById(id);
-};
+const $ = (id) => document.getElementById(id);
 
 
 // toggles for faq
-var toggle = function() {
-    var a = this;
-    var h2 = a.parentNode;
-    var div = h2.nextElementSibling;
+const toggle = function() {
+    let a = this;
+    let h2 = a.parentNode;
+    let div = h2.nextElementSibling;
 
     if (h2.hasAttribute("class")) {
         h2.removeAttribute("class");
@@ -42,10 +40,10 @@ var toggle = function() {
 
 //event handler
 window.onload = function () {
-    var faqs = $("faqs");
-    var aElements = faqs.getElementsByTagName("a");
+    let faqs = $("faqs");
+    let aElements = faqs.getElementsByTagName("a");
 
-    for (var i = 0; i < aElements.length; i++) {
+    for (let i = 0; i < aElements.length; i++) {
         aElements[i].onclick = toggle;
     }
 };

@@ -1,18 +1,20 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/11/20
-*Version:                                                *
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-library for calendar on Book Us page
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/11/20
+*Version:                                         *1.1
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/11/20    v1.0    Joshua Milbourne    Created calendar.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
-var $ = function (id) { return document.getElementById(id); };
+const $ = function (id) { return document.getElementById(id); };
 
-var getMonthText = function(currentMonth) {
+const getMonthText = function(currentMonth) {
     if (currentMonth === 0) { return "January"; }
     else if (currentMonth === 1) { return "February"; }
     else if (currentMonth === 2) { return "March"; }
@@ -27,8 +29,8 @@ var getMonthText = function(currentMonth) {
     else if (currentMonth === 11) { return "December"; }
 };
 
-var getLastDayofMonth = function(currentMonth) {
-    var dt = new Date();
+const getLastDayofMonth = function(currentMonth) {
+    let dt = new Date();
     dt.setMonth(currentMonth + 1);
     dt.setDate(0);
     return dt.getDate();

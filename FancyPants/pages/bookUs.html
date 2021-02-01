@@ -1,13 +1,15 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
-#Original Author:                                       #Joshua Milbourne
-#Date Created:                                          #09/11/20
-#Version:                                                    #
-#Date Last Modified:                                #
-#Modified by:                                           #
-#Modification log:                                    #
-added Book us page and included calendar js app
- --
+#Original Author:                                   #Joshua Milbourne
+#Date Created:                                      #09/11/20
+#Version:                                           #1.0
+#Date Last Modified:                                #1/31/21
+#Modified by:                                       #Joshua Milbourne
+#Modification log:                                  #
+
+        09/11/20    v1.0    Joshua Milbourne    Created bookUs page
+        01/31/21    v1.1    Joshua Milbourne    Cleaned up cade and added comments
+--
 ------------------------------------------------------------------------------------------------------------------>
 
 <!DOCTYPE html>
@@ -16,18 +18,17 @@ added Book us page and included calendar js app
         <meta charset="UTF-8">
         <meta name="author" content="Joshua Milbourne">
         <meta name="description" content="FancyPants Event Designs, designing your perfect event no matter how fancy your pants are">
-        <meta name="keywords" content="party planner, party, wedding, event, planner, designer, FancyPants, Fancy Pants, ">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-------------------------------------------------------------------------------- CSS links -->
         <link rel="stylesheet" href="../styles/normalize.css">
         <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="">
+        <!-------------------------------------------------------------------------------- favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="../images/favicon_io/site.webmanifest">
-        <script src="../js/calendar.js"></script>
-        <script src="../js/library_data_RegEx.js"></script>
-        <script src="../js/contact.js"></script>
+        
         <title>FancyPants Event Designs Book Us</title>
     </head>
     <body>
@@ -48,8 +49,8 @@ added Book us page and included calendar js app
                     </table>
                     <label for="time_stamp">Time Stamp</label>
                     <input type="text" name="time_stamp" id="time_stamp" disabled><br><br>
-                    <form action="#" method="GET" name="bookUsForm" id="bookUsForm">
-                        <!-- inout fields for Book Us app -->
+                    <form action="bookUs.php" method="POST" name="bookUsForm" id="bookUsForm">
+                        <!-- input fields for Book Us app -->
                         <label for="bookUsName">Name</label>
                         <input type="text" name="bookUsName" id="bookUsName">
                         <span id="error_bookUs_name" class="error">&nbsp;</span><br>
@@ -63,7 +64,6 @@ added Book us page and included calendar js app
                         <span id="error_bookUs_phone" class="error">&nbsp;</span><br>
 
                         <!-- submit form -->
-                        <!-- <button type="submit" name="bookUsSubBtn" id="bookUsSubBtn">Book Us</button> -->
                         <input type="button" name="book_us_btn" id="book_us_btn" class="btn" value="Book Us">
                     </form><br>
                 </section>
@@ -78,5 +78,9 @@ added Book us page and included calendar js app
                 <a href="https://www.youtube.com/" target="blank"><img src="../images/yt.png" alt="youtube"></a>
                 <a href="https://www.instagram.com/" target="blank"><img src="../images/ig.png" alt="instagram"></a></p>
         </footer>
+        <!--------------------------------------------------------------------- JavaScript  -->
+        <script src="../js/calendar.js"></script>
+        <script src="../js/library_data_RegEx.js"></script>
+        <script src="../js/contact.js"></script>
     </body>
 </html>

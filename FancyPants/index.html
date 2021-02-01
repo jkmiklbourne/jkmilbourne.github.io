@@ -1,27 +1,30 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
-#Original Author:                                       #Joshua Milbourne
-#Date Created:                                          #08/27/20
-#Version:                                                    #1
-#Date Last Modified:                                #08/28/20
-#Modified by:                                           #Joshua Milbourne
-#Modification log:                                    #8/27/20 created landing page
- --
+#Original Author:                                   #Joshua Milbourne
+#Date Created:                                      #08/27/20
+#Version:                                           #1.0
+#Date Last Modified:                                #1/31/21
+#Modified by:                                       #Joshua Milbourne
+#Modification log:                                  #
+
+        08/27/20    v1.0    Joshua Milbourne    Created landing page
+        01/31/21    v1.1    joshua Milbourne    Cleaned up cade and added comments
+--
 ------------------------------------------------------------------------------------------------------------------>
 
 <!DOCTYPE html>
 <html lang="en" id="landing_page">
     <head>
-                                                                                                                <!-- meta tags -->
+<!------------------------------------------------------------------------------ meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Joshua Milbourne">
         <meta name="description" content="FancyPants Event Designs, designing your perfect event no matter how fancy your pants are">
-        <meta name="keywords" content="party planner, party, wedding, event, planner, designer, FancyPants, Fancy Pants, ">
         <title>FancyPants Events</title>
-                                                                                                                <!-- links -->
+<!------------------------------------------------------------------------------- css links -->
         <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/style.css">
+<!------------------------------------------------------------------------------- favicon  -->
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
@@ -29,22 +32,21 @@
     </head>
     <body>
         <div class="content">
-            <header>
+            <header class="header text-center">
                 <a href="pages/home.html"><h1 id="landingH1">Welcome to FancyPants Event Designs</h1></a>
                 <nav>
-                    <ul>
-                        <a href="pages/home.html"><li>Home</li></a>
-                        <a href="pages/faq.html"><li>FAQ</li></a>
-                        <a href="pages/contact.html"><li>Membership</li></a>
-                        <a href="pages/wishList.html"><li>Wish List</li></a>
-                        <a href="pages/photos.html"><li>Pictures</li></a>
-                        <a href="pages/reviews.html"><li>Reviews</li></a>
-                        <a href="pages/bookUs.html"><li>Book Us</li></a><br>
-
+                    <ul class="nav-links">
+                        <li><a href="pages/home.html">Home</a></li>
+                        <li><a href="pages/faq.html">FAQ</a></li>
+                        <li><a href="pages/contact.html">Membership</a></li>
+                        <li><a href="pages/wishList.html">Wish List</a></li>
+                        <li><a href="pages/photos.html">Gallery</a></li>
+                        <li><a href="pages/reviews.html">Reviews</a></li>
+                        <li><a href="pages/bookUs.html">Book Us</a></li>
                     </ul>
                 </nav>
             </header>
-            <main>
+            <main class="flex landing_main">
                 <a href="pages/home.html">
                     <div id="landing_main">
                         <img src="images/fancyPants.png" id="landingImg" alt="FancyPants logo">
@@ -52,8 +54,8 @@
                 </a>
             </main>
         </div>
-        <footer>
-            <p>&#169;2020 FancyPants Event Designs&#8482;</p>
+        <footer class="content">
+            <p>&copy; 2020 FancyPants Event Designs&#8482;</p>
             <p>Phone: <a href="tel:123-456-7890">123-456-7890</a> Email: <a href="mailto:fancy@FancyPants.com">fancy@FancyPants.com</a></p>
             <p><address>P.O. Box #1324<br>123 FancyPants Ln<br>Springfield, MO 65814<br>USA</address></p>
             <p><a href="https://www.facebook.com/" target="blank"><img src="images/fb.png" alt="facebook"></a>

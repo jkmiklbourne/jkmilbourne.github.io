@@ -1,17 +1,19 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/18/20
-*Version:                                                *
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-created library_validate.js to validate data in fields
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/18/20
+*Version:                                         *1.
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/18/20    v1.0    Joshua Milbourne    Created library_validate.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
 "use strict";
-var Validate = function() {
+const Validate = function() {
     this.month = 0;
     this.year = 0;
 };
@@ -26,19 +28,19 @@ Validate.prototype.isMatch = function(text1, text2) {
 
 Validate.prototype.isEmail = function(text) {
     if (text.length === 0) return false;
-    var parts = text.split("@");
+    let parts = text.split("@");
     if (parts.length !== 2 ) return false;
     if (parts[0].length > 64) return false;
     if (parts[1].length > 255) return false;
-    var address =
+    let address =
         "(^[\\w!#$%&'*+/=?^`{|}~-]+(\\.[\\w!#$%&'*+/=?^`{|}~-]+)*$)";
-    var quotedText = "(^\"(([^\\\\\"])|(\\\\[\\\\\"]))+\"$)";
-    var localPart = new RegExp( address + "|" + quotedText );
+    let quotedText = "(^\"(([^\\\\\"])|(\\\\[\\\\\"]))+\"$)";
+    let localPart = new RegExp( address + "|" + quotedText );
     if ( !parts[0].match(localPart) ) return false;
-    var hostnames =
+    let hostnames =
         "(([a-zA-Z0-9]\\.)|([a-zA-Z0-9][-a-zA-Z0-9]{0,62}[a-zA-Z0-9]\\.))+";
-    var tld = "[a-zA-Z0-9]{2,6}";
-    var domainPart = new RegExp("^" + hostnames + tld + "$");
+    let tld = "[a-zA-Z0-9]{2,6}";
+    let domainPart = new RegExp("^" + hostnames + tld + "$");
     if ( !parts[1].match(domainPart) ) return false;
     return true;
 };
@@ -57,7 +59,7 @@ Validate.prototype.isCC = function(text) {
 
 Validate.prototype.isDate = function(text) {
     if ( ! /^[01]\d\/\d{4}$/.test(text) ) return false;
-    var dateParts = text.split("/");
+    let dateParts = text.split("/");
     this.month = parseInt(dateParts[0]);
     this.year = parseInt(dateParts[1]);
     if ( this.month < 1 || this.month > 12 ) return false;
@@ -66,8 +68,8 @@ Validate.prototype.isDate = function(text) {
 
 Validate.prototype.hasExpired = function(text) {
     if (this.isDate(text)) {
-        var now = new Date();
-        var exp = new Date( this.year, this.month);
+        let now = new Date();
+        let exp = new Date( this.year, this.month);
         return ( now > exp );
     } else { return false; }
 };

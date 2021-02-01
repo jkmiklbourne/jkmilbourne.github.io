@@ -41,21 +41,20 @@ added media quaries for mobile and tablets
 
 /* mobile styles */
 
-
 /* fonts */
 @font-face {
-    font-family: 'alex_brushregular';
-    src: url(../fonts/webfontkit-20200828-172818/alexbrush-regular-webfont.woff2) format('woff2'),
-         url(../fonts/webfontkit-20200828-172818/alexbrush-regular-webfont.woff) format('woff');
+    font-family: "alex_brushregular";
+    src: url(../fonts/webfontkit-20200828-172818/alexbrush-regular-webfont.woff2)
+            format("woff2"),
+        url(../fonts/webfontkit-20200828-172818/alexbrush-regular-webfont.woff)
+            format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
-
 /* background images */
 #landing_page {
     background-image: url(../images/landingPage.jpg);
-    
 }
 #home_page {
     background-image: url(../images/homePage.jpg);
@@ -86,8 +85,6 @@ added media quaries for mobile and tablets
     width: 100%;
 }
 
-
-
 /* basic styles */
 * {
     margin: 0;
@@ -98,7 +95,6 @@ html {
     background-repeat: no-repeat;
     height: 100%;
 }
-
 
 /* body styles */
 body {
@@ -120,14 +116,13 @@ header {
     /* margin-left: 10%; */
     /* margin-right: 10%; */
     width: 95%;
-    margin-top: .5em;
+    margin-top: 0.5em;
     margin-left: auto;
     margin-right: auto;
     border-radius: 1.5em;
     text-align: center;
     color: #000000;
     background-color: rgba(240, 248, 255, 0.877);
-
 }
 #header_logo {
     /* display: block; */
@@ -136,7 +131,6 @@ header {
     /* float: left; */
     /* padding-left: 1em; */
     height: 128px;
-
 }
 #landingH1 {
     font-size: 3em;
@@ -147,19 +141,17 @@ header {
     margin-top: auto;
 }
 
-
 /* nav styles */
 nav {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5em;
 }
 nav ul {
-    padding-left: 0;    
+    padding-left: 0;
+    list-style-type: none;
 }
 nav a {
-    list-style-type: none;
     color: black;
-    
 }
 /* nav li {
     background-color: rgba(240, 248, 255, 0.603);
@@ -191,28 +183,28 @@ nav li:hover {
     text-align: center;
     font-size: 4em;
 }
-#greetings h2{
+#greetings h2 {
     font-size: 3.5em;
 }
 #tasks {
     background-color: #ffffff;
     /* float: right;   */
-     width: 85%;
+    width: 85%;
     margin: 2em auto;
-	padding: 1em;
-	border: 2px solid black;
+    padding: 1em;
+    border: 2px solid black;
 }
 #tasks a {
-    color:  rgb(57, 100, 117);
+    color: rgb(57, 100, 117);
     margin-right: 0.5em;
 }
-#tasks a:focus, #tasks a:hover {
+#tasks a:focus,
+#tasks a:hover {
     color: tomato;
 }
 #tasks a:active {
-    color: rgb(102, 176, 205)
+    color: rgb(102, 176, 205);
 }
-
 
 /* class styles */
 .main {
@@ -229,9 +221,10 @@ nav li:hover {
     padding: 0 1em;
 }
 
-
 /* tag styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     text-align: center;
 }
 form {
@@ -239,12 +232,13 @@ form {
     color: #000000;
 }
 label {
-	/* float: left; */
+    /* float: left; */
     /* width: 17.25em; */
     text-align: center;
     display: block;
 }
-input, button {
+input,
+button {
     display: block;
     /* margin-left: auto;
     margin-right: auto; */
@@ -253,7 +247,8 @@ input, button {
     border: 2px ridge lightgray;
     border-radius: 5px;
 }
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
     background-color: rgba(102, 176, 205, 0.452);
 }
 .btn:active {
@@ -261,7 +256,7 @@ input, button {
 }
 .error {
     display: block;
-	color: red;
+    color: red;
 }
 textarea {
     display: block;
@@ -292,27 +287,27 @@ td {
     border: 1px solid black;
 }
 
-
 /* link styles */
 a {
     color: #000000;
 }
-a:focus, a:hover {
+a:focus,
+a:hover {
     color: tomato;
 }
 /* #headerH1:hover {
     color: #ffffff;
 } */
 #top_link {
-    color:  rgb(56, 100, 117);
+    color: rgb(56, 100, 117);
     display: block;
     width: 8em;
     margin: 0 auto;
 }
-#top_link:focus, #top_link:hover {
+#top_link:focus,
+#top_link:hover {
     color: tomato;
 }
-
 
 /* img tags */
 .main img {
@@ -324,7 +319,7 @@ a:focus, a:hover {
     border-radius: 10px;
 }
 figcaption {
-    font-family: alex_brushregular, Geneva, Tahoma, sans-serif;;
+    font-family: alex_brushregular, Geneva, Tahoma, sans-serif;
     font-size: 2.5em;
     text-align: center;
 }
@@ -346,8 +341,6 @@ figcaption {
     margin: 2em;
 }
 
-
-
 /* footer styles */
 footer {
     /* position: absolute; */
@@ -363,7 +356,7 @@ footer {
     padding-bottom: 7px;
     border-radius: 1.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .85em;
+    font-size: 0.85em;
     color: #000000;
     background-color: rgba(240, 248, 255, 0.603);
 }
@@ -380,11 +373,10 @@ footer {
         margin: auto;
         width: 200px;
         border-radius: 1.5em;
-        margin-bottom: .5em;
+        margin-bottom: 0.5em;
         /* display: flexbox; */
     }
 }
-
 
 /* tablet styles */
 
@@ -393,7 +385,7 @@ footer {
         background-image: url(../images/photos.jpg);
     }
     #landing_main {
-        width: 480px;  
+        width: 480px;
     }
     #landingImg {
         margin: 2em;
@@ -406,7 +398,6 @@ footer {
     }
 }
 
-
 /* laptop styles */
 
 @media screen and (min-width: 1024px) {
@@ -418,12 +409,12 @@ footer {
         display: block;
         height: 64px;
         float: left;
-        margin: .5em 0 0 .5em;
+        margin: 0.5em 0 0 0.5em;
     }
     #headerH1 {
         display: flex;
         line-height: 64px;
-        margin-top: .5em;
+        margin-top: 0.5em;
     }
     #landingH1 {
         margin-bottom: auto;
@@ -435,7 +426,7 @@ footer {
         color: rgb(76, 122, 141);
         display: inline-block;
         width: 13.5%;
-        font-size: .75em;
+        font-size: 0.75em;
         margin-bottom: 1em;
     }
     label {

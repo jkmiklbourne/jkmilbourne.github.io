@@ -1,23 +1,26 @@
 /*********************************************************************
 ***
-*Original Author:                                   *Joshua Milbourne
-*Date Created:                                       *09/18/20
-*Version:                                                *
-*Date Last Modified:                              *
-*Modified by:                                          *
-*Modification log:                                  *
-created library_navigate.js to validate data in fields
+*Original Author:                                 *Joshua Milbourne
+*Date Created:                                    *09/18/20
+*Version:                                         *1.
+*Date Last Modified:                              *01/31/21
+*Modified by:                                     *Joshua Milbourne
+*Modification log:                                *
+*
+        09/18/20    v1.0    Joshua Milbourne    Created library_navigate.js
+        01/31/21    v1.1    Joshua Milbourne    cleaned up code and add comments
 ***
-******************************************************************** */
+*********************************************************************/
 
 "use strict";
-var $ = function(id) { return document.getElementById(id); };
+const $ = (id) => document.getElementById(id);
 
-var navigate = {
+const navigate = {
     showForm: function() {
         $("registration_form").setAttribute("class","show");
         $("registration_result").setAttribute("class","hide");
     },
+
     showResults: function() {
         $("registration_form").setAttribute("class","hide");
         $("registration_result").setAttribute("class","show");

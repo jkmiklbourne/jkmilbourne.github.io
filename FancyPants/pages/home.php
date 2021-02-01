@@ -1,19 +1,57 @@
 <!----------------------------------------------------------------------------------------------------------------
 --
 #Original Author:                                   #Joshua Milbourne
-#Date Created:                                      #09/10/20
-#Version:                                           #1.2
+#Date Created:                                      #1/30/21
+#Version:                                           #1.1
 #Date Last Modified:                                #1/31/21
 #Modified by:                                       #Joshua Milbourne
 #Modification log:                                  #
 
-        09/10/20    v1.0    Joshua Milbourne    Created photos page
+        1/30/21    v1.0    Joshua Milbourne    Created home page and connected to home.html form
         01/31/21    v1.1    Joshua Milbourne    Cleaned up code and added comments
 --
 ------------------------------------------------------------------------------------------------------------------>
 
+<?php
+
+$email_newsletter = filter_input(INPUT_GET, 'email_address_news');
+$first_name_newsletter = filter_input(INPUT_GET, 'first_name_news');
+$last_name_newsletter = filter_input(INPUT_GET, 'last_name_news');
+
+if ($test) {
+    $error = 'Please check all your entries and try again';
+    echo "Form Data Error: $error";
+    exit();
+} else {
+    $dsn = 'mysql:host=localhost;dbname=fancypantsmembers';
+    $username = 'fp_emp';
+    $password = 'pa55word';
+
+    try {
+        $db = new PDO($dsn, $username, $password);
+    } catch (PDOException $e) {
+        $error_message = $e->getMessage();
+        echo "Database error: $error_message";
+    }
+
+    $query = "INSERT INTO newsletter 
+                (email, firstName, lastName)
+            VALUES
+                (:email, :first_name, :last_name)";
+    $statement = $db->prepare($query);
+    $statement->bindValue(':email', $email_newsletter);
+    $statement->bindValue(':first_name', $first_name_newsletter);
+    $statement->bindValue(':last_name', $last_name_newsletter);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+
+?>
+
+
 <!DOCTYPE html>
-<html lang="en" id="photos_page" class="html_back_img">
+<html lang="en" id="home_page" class="html_back_img">
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Joshua Milbourne">
@@ -23,14 +61,13 @@
         <!--------------------------------------------------------- CSS Links -->
         <link rel="stylesheet" href="../styles/normalize.css">
         <link rel="stylesheet" href="../styles/style.css">
-
         <!--------------------------------------------------------- favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_io/favicon-16x16.png">
         <link rel="manifest" href="../images/favicon_io/site.webmanifest">
-        
-        <title>FancyPants Event Designs Photos</title>
+
+        <title>FancyPants Event Designs Home Page</title>
     </head>
     <body>
         <div class="content">
@@ -40,38 +77,19 @@
                 </div>
             </header>
             <main>
-                <div class="main" id="photos">
-                    <h1>Photos of past events hand-crafted by FancyPants Event Designs</h1>
-                    <!-- photo gallery -->
-                    <img src="../images/photos/01.jpg" alt="swanky lounge" title="Swanky Lounge">
-                    <figcaption>Swanky Lounge</figcaption>
+                <section id="greetings" class="main">
+                    <h1>Welcome to FancyPants Event Designs</h1>
+                    <h2>We will design your perfect event...<br>
+                        No matter how fancy your pants are!</h2>
+                </section>
+                <section class="main" id="newsletter">
+                    <h2 id="newsletter_heading">Subscribe to our newsletter</h2>
                     
-                    <img src="../images/photos/02.jpg" alt="royal wedding" title="Royal Wedding">
-                    <figcaption>Royal Wedding</figcaption>
-
-                    <img src="../images/photos/03.jpg" alt="under the stars" title="Under the Stars">
-                    <figcaption>Under the Stars</figcaption>
-
-                    <img src="../images/photos/04.jpg" alt="back to nature" title="Back to Nature">
-                    <figcaption>Back to Nature</figcaption>
-
-                    <img src="../images/photos/05.jpg" alt="elegant tent" title="Elegant Tent">
-                    <figcaption>Elegant Tent</figcaption>
-
-                    <img src="../images/photos/06.jpg" alt="under the sea" title="Under the Sea">
-                    <figcaption>Under the Sea</figcaption>
-
-                    <img src="../images/photos/07.jpg" alt="misty glen" title="Misty Glen">
-                    <figcaption>Misty Glen</figcaption>
-
-                    <img src="../images/photos/09.jpg" alt="chateau des fleurs" title="Chateau des Fleurs">
-                    <figcaption>Chateau des Fleurs</figcaption>
-
-                    <img src="../images/photos/10.jpg" alt="english finery" title="English Finery">
-                    <figcaption>English Finery</figcaption>
-                    <br>
-                    <a href="#top" id="top_link">Back to the top</a><br><br>
-                </div>
+                    <!-- Thank you message -->
+                    <br><br>
+                    <h3>Thank you for signing up for our newsletter</h3>
+                    <br><br>
+                </section>
             </main>
         </div>
         <footer>
