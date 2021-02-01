@@ -14,11 +14,11 @@
 
 <?php
 
-$email_newsletter = filter_input(INPUT_GET, 'email_address_news');
-$first_name_newsletter = filter_input(INPUT_GET, 'first_name_news');
-$last_name_newsletter = filter_input(INPUT_GET, 'last_name_news');
+$email_address_news = filter_input(INPUT_GET, 'email_address_news');
+$first_name_news = filter_input(INPUT_GET, 'first_name_news');
+$last_name_news = filter_input(INPUT_GET, 'last_name_news');
 
-if ($test) {
+if ($email_address_news == NULL || $first_name_news == NULL || $last_name_news == NULL) {
     $error = 'Please check all your entries and try again';
     echo "Form Data Error: $error";
     exit();
@@ -39,9 +39,9 @@ if ($test) {
             VALUES
                 (:email, :first_name, :last_name)";
     $statement = $db->prepare($query);
-    $statement->bindValue(':email', $email_newsletter);
-    $statement->bindValue(':first_name', $first_name_newsletter);
-    $statement->bindValue(':last_name', $last_name_newsletter);
+    $statement->bindValue(':email', $email_address_news);
+    $statement->bindValue(':first_name', $first_name_news);
+    $statement->bindValue(':last_name', $last_name_news);
     $statement->execute();
     $statement->closeCursor();
 }

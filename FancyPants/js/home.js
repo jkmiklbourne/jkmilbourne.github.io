@@ -61,7 +61,7 @@ const processEntries = function () {
         // submit form
         // swapped submit and clear JM 01/31/21 to allow form to submit to form
         submitForm();
-        clearForm();
+        // clearForm();
     }
 };
 
